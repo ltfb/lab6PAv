@@ -1,28 +1,39 @@
-#include "DtDireccion.h"
+#ifndef DTDIRECCION
+#define DTDIRECCION
 
-DtDireccion::DtDireccion(){}
-DtDireccion::DtDireccion(string nomCalle, string entreCalle1, string entreCalle2, int nroPuerta){
-    this->nomCalle=nomCalle;
-    this->entreCalle1=entreCalle1;
-    this->entreCalle2=entreCalle2;
-    this->nroPuerta=nroPuerta;
-}
+#include<iostream>
+using namespace std;
 
-string DtDireccion::getCalle(){
-    return this->nomCalle;
-}
+class DtDireccion{
+	private:
+        string nomCalle;
+        string entreCalle1;
+        string entreCalle2;
+        int nroPuerta;
 
-string DtDireccion::getEntreCalle1(){
-    return this->entreCalle1;
-}
+	public:
+		DtDireccion();
+		DtDireccion(string, string, string, int);
+		string getCalle();
+        string getEntreCalle1();
+        string getEntreCalle2();
+        int getNroPuerta();
 
-string DtDireccion::getEntreCalle2(){
-    return this->entreCalle2;
-}
+		~DtDireccion();
+};
 
-int DtDireccion::getNroPuerta(){
-    return this->nroPuerta;
-}
+class DtApartamento: public DtDireccion{ //Está bien?
+    private:
+        string nomEdificio;
+        int nroApartamento;
+    
+    public:
+        DtApartamento(string, int);
+        string getNomEdificio();
+        int getNroApartamento();
 
-DtDireccion::~DtDireccion(){}
+        ~DtApartamento();
+};
 
+
+#endif
