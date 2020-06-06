@@ -22,9 +22,17 @@ class DtDireccion{
 		~DtDireccion();
 };
 
-class DtDepartamento: public DtDireccion{
-    string nomEdificio;
-    int nroApartamento;
+class DtApartamento: public DtDireccion{ //Está bien?
+    private:
+        string nomEdificio;
+        int nroApartamento;
+    
+    public:
+        DtApartamento(string, int);
+        string getNomEdificio();
+        int getNroApartamento();
+
+        ~DtApartamento();
 };
 
 
